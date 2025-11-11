@@ -3,23 +3,14 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* --- Novas Cores (Tema Claro) --- */
+  color: #213547; /* Texto escuro principal */
+  background-color: #ffffff; /* Fundo branco */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -28,13 +19,17 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* Fundo do corpo levemente cinza para destacar o app */
+  background-color: #f0f2f5;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #2c3e50; /* Cor mais escura para o título */
 }
 
+/* --- Novos Estilos de Botão --- */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,27 +37,125 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
+
+  /* --- Botão Principal (Verde Eco) --- */
+  background-color: #4caf50; /* Verde principal */
+  color: #ffffff;
+  border-color: #4caf50;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #45a049; /* Verde mais escuro no hover */
+  border-color: #45a049;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* --- Estilos dos Componentes Customizados --- */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+/* --- Novos Estilos de Input --- */
+.task-form input {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid #ccc; /* Borda cinza clara */
+  background-color: #f9f9f9; /* Fundo levemente cinza */
+  color: #213547; /* Texto escuro */
+}
+.task-form input:focus {
+  border-color: #4caf50; /* Destaca em verde ao focar */
+  outline: none;
+}
+
+/* Botão de Adicionar (já está verde pelo 'button' geral) */
+.task-form button {
+  background-color: #1e90ff; /* Azul para "Adicionar" */
+  border-color: #1e90ff;
+}
+.task-form button:hover {
+  background-color: #1c86e4;
+  border-color: #1c86e4;
+}
+
+.task-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* --- Novo Estilo do Item da Tarefa --- */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em;
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 8px;
+  border: 1px solid #e0e0e0; /* Borda cinza clara */
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s;
+}
+.task-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.task-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  color: #2c3e50; /* Cor do título da tarefa */
+}
+.task-info span {
+  font-size: 0.9em;
+  color: #777; /* Cor da categoria */
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botão Concluir (Verde) */
+.task-actions .toggle-btn {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+.task-actions .toggle-btn:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+/* Botão Excluir (Vermelho) */
+.task-actions .delete-btn {
+  background-color: #f44336; /* Vermelho para excluir */
+  border-color: #f44336;
+}
+.task-actions .delete-btn:hover {
+  background-color: #da190b; /* Vermelho escuro no hover */
+  border-color: #da190b;
+}
+
+/* Mensagem de Erro */
+.error-message {
+  color: #f44336;
+  font-weight: bold;
 }
